@@ -291,7 +291,7 @@ p {
 .nav-menu {
     display: flex;
     list-style: none;
-    gap: 2rem;
+    gap: 1.25rem;
     margin: 0;
     padding: 0;
 }
@@ -300,10 +300,10 @@ p {
     text-decoration: none;
     color: var(--white);
     font-weight: 600;
-    font-size: 0.9rem;
+    font-size: 0.78rem;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
-    padding: 0.5rem 0;
+    letter-spacing: 0.3px;
+    padding: 0.4rem 0;
     position: relative;
     transition: var(--transition);
 }
@@ -899,6 +899,367 @@ p {
 }
 
 /* ==========================================================================
+   6.5 EXPERIENCE SECTION (#experiencia)
+   ========================================================================== */
+.experience-section {
+    padding: 5rem 0;
+    background: var(--white);
+}
+
+/* Timeline Layout */
+.timeline {
+    position: relative;
+    padding-left: 3rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(180deg, var(--primary-blue), var(--accent-gold));
+    border-radius: 2px;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 2.5rem;
+    padding-left: 1.5rem;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-marker {
+    position: absolute;
+    left: -2.5rem;
+    top: 0.25rem;
+    width: 36px;
+    height: 36px;
+    background: linear-gradient(135deg, var(--primary-blue), #0d3880);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 0.85rem;
+    box-shadow: 0 4px 12px rgba(20, 72, 160, 0.35);
+    z-index: 2;
+}
+
+.timeline-content {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 1.75rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    border: 1px solid #e8ecf1;
+    transition: var(--transition);
+}
+
+.timeline-content:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(20, 72, 160, 0.12);
+    border-color: var(--primary-blue);
+}
+
+.timeline-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+}
+
+.timeline-title-group h3 {
+    font-size: 1.2rem;
+    color: var(--dark-charcoal);
+    margin-bottom: 0.25rem;
+}
+
+.company-name {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--primary-blue);
+}
+
+.timeline-date {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--white);
+    background: linear-gradient(135deg, var(--primary-blue), #0d3880);
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    white-space: nowrap;
+}
+
+.timeline-details {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.25rem 0;
+}
+
+.timeline-details li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    margin-bottom: 0.6rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--medium-gray);
+}
+
+.timeline-details li i {
+    color: var(--accent-gold);
+    margin-top: 0.2rem;
+    flex-shrink: 0;
+    font-size: 0.8rem;
+}
+
+.timeline-details li strong {
+    color: var(--dark-charcoal);
+}
+
+.timeline-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.timeline-tag {
+    background: rgba(20, 72, 160, 0.08);
+    color: var(--primary-blue);
+    padding: 0.3rem 0.85rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.timeline-tag:hover {
+    background: var(--primary-blue);
+    color: var(--white);
+}
+
+/* ==========================================================================
+   6.6 EDUCATION SECTION (#educacion)
+   ========================================================================== */
+.education-section {
+    padding: 5rem 0;
+    background: var(--light-gray);
+}
+
+.education-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.category-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+}
+
+.category-header i {
+    font-size: 1.5rem;
+    color: var(--primary-blue);
+}
+
+.category-header h3 {
+    font-size: 1.3rem;
+    color: var(--dark-charcoal);
+    margin-bottom: 0;
+}
+
+.education-cards {
+    display: grid;
+    gap: 1rem;
+}
+
+.education-card {
+    background: var(--white);
+    border-radius: 14px;
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+    border: 1px solid #e8ecf1;
+    transition: var(--transition);
+}
+
+.education-card:hover {
+    transform: translateX(6px);
+    box-shadow: 0 6px 20px rgba(20, 72, 160, 0.1);
+    border-left: 3px solid var(--primary-blue);
+}
+
+.education-card.featured {
+    background: linear-gradient(135deg, var(--primary-blue), #0d3880);
+    color: var(--white);
+    border: none;
+    box-shadow: 0 8px 25px rgba(20, 72, 160, 0.3);
+}
+
+.education-card.featured:hover {
+    transform: translateX(6px) translateY(-2px);
+    box-shadow: 0 12px 30px rgba(20, 72, 160, 0.4);
+    border-left: none;
+}
+
+.education-card.featured .education-icon {
+    background: rgba(255, 255, 255, 0.2);
+    color: var(--white);
+}
+
+.education-card.featured .institution {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.education-card.featured .education-year {
+    background: var(--accent-gold);
+    color: var(--dark-charcoal);
+}
+
+.education-card-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex: 1;
+}
+
+.education-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: rgba(20, 72, 160, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-blue);
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+.education-info h4 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--dark-charcoal);
+    margin-bottom: 0.15rem;
+}
+
+.education-card.featured .education-info h4 {
+    color: var(--white);
+}
+
+.institution {
+    font-size: 0.8rem;
+    color: var(--medium-gray);
+    font-weight: 500;
+}
+
+.education-year {
+    background: rgba(20, 72, 160, 0.08);
+    color: var(--primary-blue);
+    padding: 0.35rem 1rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.education-year.active-badge {
+    background: linear-gradient(135deg, var(--accent-gold), #d4a90a);
+    color: var(--dark-charcoal);
+    box-shadow: 0 2px 8px rgba(242, 201, 17, 0.4);
+    animation: pulse-badge 2s infinite;
+}
+
+@keyframes pulse-badge {
+    0%, 100% { box-shadow: 0 2px 8px rgba(242, 201, 17, 0.4); }
+    50% { box-shadow: 0 4px 16px rgba(242, 201, 17, 0.6); }
+}
+
+/* Recognition */
+.recognition-section {
+    margin-top: 3rem;
+    padding-top: 2.5rem;
+    border-top: 2px solid rgba(20, 72, 160, 0.1);
+}
+
+.recognition-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.recognition-card {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e8ecf1;
+    transition: var(--transition);
+}
+
+.recognition-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(242, 201, 17, 0.15);
+    border-color: var(--accent-gold);
+}
+
+.recognition-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent-gold), #d4a90a);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    color: var(--white);
+    font-size: 1.3rem;
+    box-shadow: 0 4px 12px rgba(242, 201, 17, 0.3);
+}
+
+.recognition-card h4 {
+    font-size: 1rem;
+    color: var(--dark-charcoal);
+    margin-bottom: 0.35rem;
+}
+
+.recognition-card p {
+    font-size: 0.85rem;
+    color: var(--medium-gray);
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.recognition-date {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--primary-blue);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* ==========================================================================
    7. PORTFOLIO SECTION (#portfolio)
    ========================================================================== */
 .portfolio {
@@ -1491,6 +1852,41 @@ textarea.form-control {
 
     .floating-card {
         display: none;
+    }
+
+    /* Timeline mobile fix */
+    .timeline {
+        padding-left: 2rem;
+    }
+
+    .timeline::before {
+        left: 10px;
+    }
+
+    .timeline-marker {
+        left: -2rem;
+        width: 30px;
+        height: 30px;
+        font-size: 0.7rem;
+    }
+
+    .timeline-header {
+        flex-direction: column;
+    }
+
+    .timeline-content {
+        padding: 1.25rem;
+    }
+
+    /* Education mobile fix */
+    .education-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+    }
+
+    .education-card-header {
+        width: 100%;
     }
 
     /* Portfolio grid fix for mobile */

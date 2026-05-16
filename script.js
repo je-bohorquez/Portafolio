@@ -433,7 +433,7 @@ class PortfolioApp {
         }, observerOptions);
 
         // Observe elements for animation
-        const animateElements = document.querySelectorAll('.competence-card, .portfolio-item, .about-content, .hero-content, .hero-visual');
+        const animateElements = document.querySelectorAll('.competence-card, .portfolio-item, .about-content, .hero-content, .hero-visual, .timeline-item, .education-card, .recognition-card');
         animateElements.forEach(el => {
             el.classList.add('animate-on-scroll');
             observer.observe(el);
@@ -454,7 +454,7 @@ class PortfolioApp {
                 this.disabled = true;
 
                 try {
-                    const pdfUrl = 'pdf/cv-juaneder-23.pdf';
+                    const pdfUrl = 'pdf/cv-juaneder-26.pdf';
                     const fileName = 'CV_Juan_Eder.pdf';
 
                     // Usar Fetch API para obtener el archivo como blob
@@ -489,7 +489,7 @@ class PortfolioApp {
                     console.error('Error en descarga:', error);
                     // Fallback: descarga tradicional
                     const fallbackLink = document.createElement('a');
-                    fallbackLink.href = 'pdf/cv-juaneder-23.pdf';
+                    fallbackLink.href = 'pdf/cv-juaneder-26.pdf';
                     fallbackLink.download = 'CV_Juan_Eder.pdf';
                     fallbackLink.style.display = 'none';
                     document.body.appendChild(fallbackLink);
