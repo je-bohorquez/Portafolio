@@ -23,6 +23,12 @@ class PortfolioApp {
     checkSubmissionStatus() {
         const urlParams = new URLSearchParams(window.location.search);
         if (urlParams.get('email_sent') === 'true') {
+            // Limpiar todos los campos del formulario tras envío exitoso
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.reset();
+            }
+
             // Show success notification after a short delay to ensure UI is ready
             setTimeout(() => {
                 this.showNotification('¡Mensaje enviado con éxito! Te contactaré pronto.', 'success');
