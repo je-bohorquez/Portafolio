@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio de Proyectos | JUAN E. BOHORQUEZ AGUILAR</title>
+    <link rel="icon" type="image/x-icon" href="icon/barchart.ico" />
+    <link rel="stylesheet" href="style.css">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-group">
+                    <img src="img/logo.png" alt="JE BOHORQUEZ AGUILAR" class="brand-logo">
+                    <div class="brand">
+                        <span class="brand-name">JUAN E. BOHORQUEZ AGUILAR</span>
+                        <span class="brand-tagline">Business Intelligence Analyst</span>
+                    </div>
+                </div>
+
+                <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+                    <span class="hamburger"></span>
+                </button>
+
+                <nav class="navigation" id="navigation">
+                    <ul class="nav-menu" id="navMenu">
+                        <li><a href="index.html" class="nav-link">INICIO</a></li>
+                        <li><a href="index.html#sobremi" class="nav-link">SOBRE MÍ</a></li>
+                        <li><a href="experiencia.html" class="nav-link">EXPERIENCIA</a></li>
+                        <li><a href="educacion.html" class="nav-link">EDUCACIÓN</a></li>
+                        <li><a href="competencias.html" class="nav-link">SKILLS</a></li>
+                        <li><a href="portfolio.html" class="nav-link active">PORTAFOLIO</a></li>
+                        <li><a href="contacto.html" class="nav-link">CONTACTO</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Space for fixed header -->
+    <div style="height: 80px;"></div>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">PORTAFOLIO</h2>
+                <p class="section-subtitle">Casos de éxito y soluciones de Business Intelligence desarrolladas</p>
+            </div>
+
+            <div class="portfolio-filters">
+                <button class="filter-btn active" data-filter="all">TODOS</button>
+                <button class="filter-btn" data-filter="bi">BUSINESS INTELLIGENCE</button>
+                <button class="filter-btn" data-filter="automation">AUTOMATIZACIÓN</button>
+                <button class="filter-btn" data-filter="process">PROCESOS</button>
+            </div>
+
+            <div class="portfolio-grid">
+                <!-- Proyecto 1 -->
+                <div class="portfolio-item" data-category="bi automation">
+                    <div class="portfolio-img">
+                        <img src="img/proyectos/pry1.jpg" alt="Sistema de Control Patrimonial">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-actions">
+                                <a href="https://app.powerbi.com/view?r=eyJrIjoiOTEwZDllMDUtMDQxNi00MzlmLThjZWYtZjE2NDBiYWZhMjY5IiwidCI6ImM0YTY2YzM0LTJiYjctNDUxZi04YmUxLWIyYzI2YTQzMDE1OCIsImMiOjR9"
+                                    target="_blank" class="action-btn external-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Sistema de Control Patrimonial</h3>
+                        <p>Transformación completa del sistema de gestión de activos fijos para EPS Selva Central, automatizando conciliaciones contables y operativas.</p>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">Python</span>
+                            <span class="portfolio-tag">SQL</span>
+                            <span class="portfolio-tag">Power BI</span>
+                        </div>
+                        <a href="https://app.powerbi.com/view?r=eyJrIjoiOTEwZDllMDUtMDQxNi00MzlmLThjZWYtZjE2NDBiYWZhMjY5IiwidCI6ImM0YTY2YzM0LTJiYjctNDUxZi04YmUxLWIyYzI2YTQzMDE1OCIsImMiOjR9"
+                            target="_blank" class="portfolio-link">
+                            Ver Reporte Power BI
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Proyecto 2 -->
+                <div class="portfolio-item" data-category="process">
+                    <div class="portfolio-img">
+                        <img src="img/proyectos/pry2.jpg" alt="Optimización de Procesos">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-actions">
+                                <a href="#" class="action-btn external-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Optimización de Procesos Operativos</h3>
+                        <p>Rediseño y estandarización de flujos bajo notación BPMN para mejorar la trazabilidad administrativa de activos en almacenes remotos.</p>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">BPMN</span>
+                            <span class="portfolio-tag">Bizagi</span>
+                            <span class="portfolio-tag">Eficiencia</span>
+                        </div>
+                        <a href="#" class="portfolio-link">
+                            Ver detalles
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Proyecto 3 -->
+                <div class="portfolio-item" data-category="bi">
+                    <div class="portfolio-img">
+                        <img src="img/proyectos/pry3.jpg" alt="Dashboard de Gestión">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-actions">
+                                <a href="#" class="action-btn external-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Dashboard de Gestión Presupuestal</h3>
+                        <p>Modelado de datos financieros basados en clasificadores del MEF para la visualización del avance y control del presupuesto institucional (PIA/PIM).</p>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">Power BI</span>
+                            <span class="portfolio-tag">SQL</span>
+                            <span class="portfolio-tag">ETL</span>
+                        </div>
+                        <a href="#" class="portfolio-link">
+                            Ver detalles
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo-group">
+                        <img src="img/logo.png" alt="JE DATA SOLUTIONS" class="brand-logo">
+                        <div class="brand">
+                            <span class="brand-name">JE DATA SOLUTIONS</span>
+                            <span class="brand-tagline">Business Intelligence</span>
+                        </div>
+                    </div>
+                    <p class="footer-description">
+                        "Transformando datos en decisiones estratégicas"
+                    </p>
+                </div>
+
+                <div class="footer-links" style="display: flex; justify-content: flex-end; align-items: center;">
+                    <div class="footer-column">
+                        <div class="social-links">
+                            <a href="#" class="social-link">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="social-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>&copy; 2025 JE DATA SOLUTIONS. Todos los derechos reservados.</p>
+                </div>
+                <div class="footer-credits">
+                    <p>Ingeniero Empresarial CIP 379204</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

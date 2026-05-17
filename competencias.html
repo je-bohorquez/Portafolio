@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Competencias y Skills | JUAN E. BOHORQUEZ AGUILAR</title>
+    <link rel="icon" type="image/x-icon" href="icon/barchart.ico" />
+    <link rel="stylesheet" href="style.css">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        /* Estilos premium para gráficos */
+        .charts-section {
+            padding: 4rem 0 5rem 0;
+            background: #fdfdfd;
+        }
+
+        .charts-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2.5rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .charts-container {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+
+        .chart-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e8ecf1;
+            transition: var(--transition);
+        }
+
+        .chart-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(20, 72, 160, 0.08);
+            border-color: var(--primary-blue);
+        }
+
+        .chart-card h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--dark-charcoal);
+            margin-bottom: 1.5rem;
+            text-align: center;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .chart-card h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-blue), var(--accent-gold));
+            border-radius: 2px;
+        }
+
+        .chart-wrapper {
+            position: relative;
+            width: 100%;
+            height: 320px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-group">
+                    <img src="img/logo.png" alt="JE BOHORQUEZ AGUILAR" class="brand-logo">
+                    <div class="brand">
+                        <span class="brand-name">JUAN E. BOHORQUEZ AGUILAR</span>
+                        <span class="brand-tagline">Business Intelligence Analyst</span>
+                    </div>
+                </div>
+
+                <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+                    <span class="hamburger"></span>
+                </button>
+
+                <nav class="navigation" id="navigation">
+                    <ul class="nav-menu" id="navMenu">
+                        <li><a href="index.html" class="nav-link">INICIO</a></li>
+                        <li><a href="index.html#sobremi" class="nav-link">SOBRE MÍ</a></li>
+                        <li><a href="experiencia.html" class="nav-link">EXPERIENCIA</a></li>
+                        <li><a href="educacion.html" class="nav-link">EDUCACIÓN</a></li>
+                        <li><a href="competencias.html" class="nav-link active">SKILLS</a></li>
+                        <li><a href="portfolio.html" class="nav-link">PORTAFOLIO</a></li>
+                        <li><a href="contacto.html" class="nav-link">CONTACTO</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Space for fixed header -->
+    <div style="height: 80px;"></div>
+
+    <!-- Competencias Section -->
+    <section id="competencias" class="competences">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">COMPETENCIAS CLAVE</h2>
+                <p class="section-subtitle">Tecnologías, metodologías y habilidades técnicas que domino</p>
+            </div>
+
+            <div class="competences-grid">
+                <!-- Card 1 -->
+                <div class="competence-card">
+                    <div class="competence-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Business Intelligence</h3>
+                    <p>Diseño y construcción de dashboards estratégicos y modelos analíticos de datos mediante procesos ETL robustos orientados a la toma de decisiones gerenciales.</p>
+                    <div class="tools-list">
+                        <span class="tool-tag">Power BI</span>
+                        <span class="tool-tag">SQL</span>
+                        <span class="tool-tag">Excel</span>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="competence-card">
+                    <div class="competence-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>Análisis de Datos y ETL</h3>
+                    <p>Extracción, transformación y carga de datos desde diversas fuentes operativas. Construcción de modelos relacionales eficientes y consultas complejas.</p>
+                    <div class="tools-list">
+                        <span class="tool-tag">SQL Server</span>
+                        <span class="tool-tag">MySQL</span>
+                        <span class="tool-tag">SQLite</span>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="competence-card">
+                    <div class="competence-icon">
+                        <i class="fas fa-sitemap"></i>
+                    </div>
+                    <h3>Modelado de Procesos</h3>
+                    <p>Elaboración del mapa de procesos AS IS / TO BE con aplicación de notación BPMN para la optimización y mejora continua en la gestión de operaciones.</p>
+                    <div class="tools-list">
+                        <span class="tool-tag">Bizagi Modeler</span>
+                        <span class="tool-tag">BPMN</span>
+                        <span class="tool-tag">Procesos</span>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="competence-card">
+                    <div class="competence-icon">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <h3>Planeamiento y Finanzas</h3>
+                    <p>Monitoreo financiero, control presupuestal data-driven de ejecución (PIA/PIM) y conciliación contable de activos fijos bajo normas internacionales (NIC 16/36).</p>
+                    <div class="tools-list">
+                        <span class="tool-tag">PIA / PIM</span>
+                        <span class="tool-tag">NIC 16 & 36</span>
+                        <span class="tool-tag">Flujo de Caja</span>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="competence-card">
+                    <div class="competence-icon">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <h3>Gestión de Proyectos</h3>
+                    <p>Planificación de cronogramas, control de líneas base mediante metodología EVM (Earned Value) y gestión integral de riesgos e incidencias en proyectos.</p>
+                    <div class="tools-list">
+                        <span class="tool-tag">MS Project</span>
+                        <span class="tool-tag">PMBOK</span>
+                        <span class="tool-tag">EVM (SPI/CPI)</span>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="competence-card">
+                    <div class="competence-icon">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <h3>Automatización y Scripting</h3>
+                    <p>Desarrollo de scripts de automatización con Python y macros VBA para optimizar y agilizar flujos repetitivos, eliminando al 100% el error humano de registro.</p>
+                    <div class="tools-list">
+                        <span class="tool-tag">Python</span>
+                        <span class="tool-tag">VBA Excel</span>
+                        <span class="tool-tag">Automatización</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visualización Estadística Section -->
+    <section class="charts-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">VISUALIZACIÓN DE HABILIDADES</h2>
+                <p class="section-subtitle">Representación analítica de mi stack tecnológico y competencias metodológicas</p>
+            </div>
+
+            <div class="charts-container">
+                <!-- Tech Stack Chart -->
+                <div class="chart-card">
+                    <h3>DATA STACK & HERRAMIENTAS TÉCNICAS</h3>
+                    <div class="chart-wrapper">
+                        <canvas id="techStackChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Methodology Chart -->
+                <div class="chart-card">
+                    <h3>METODOLOGÍAS & BI PROFICIENCY</h3>
+                    <div class="chart-wrapper">
+                        <canvas id="methodologyChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo-group">
+                        <img src="img/logo.png" alt="JE DATA SOLUTIONS" class="brand-logo">
+                        <div class="brand">
+                            <span class="brand-name">JE DATA SOLUTIONS</span>
+                            <span class="brand-tagline">Business Intelligence</span>
+                        </div>
+                    </div>
+                    <p class="footer-description">
+                        "Transformando datos en decisiones estratégicas"
+                    </p>
+                </div>
+
+                <div class="footer-links" style="display: flex; justify-content: flex-end; align-items: center;">
+                    <div class="footer-column">
+                        <div class="social-links">
+                            <a href="#" class="social-link">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="social-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>&copy; 2025 JE DATA SOLUTIONS. Todos los derechos reservados.</p>
+                </div>
+                <div class="footer-credits">
+                    <p>Ingeniero Empresarial CIP 379204</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Configuración de los Gráficos de Competencias con los colores corporativos
+        document.addEventListener('DOMContentLoaded', () => {
+            const primaryNavy = '#1448a0';
+            const accentGold = '#f2c911';
+            const charcoal = '#1a1a1a';
+            const mediumGray = '#333333';
+
+            // Chart 1: Data Stack (Horizontal Bar Chart)
+            const ctx1 = document.getElementById('techStackChart').getContext('2d');
+            
+            // Creamos un degradado hermoso
+            const gradientBlue = ctx1.createLinearGradient(0, 0, 400, 0);
+            gradientBlue.addColorStop(0, '#1448a0');
+            gradientBlue.addColorStop(1, '#2f74e5');
+
+            new Chart(ctx1, {
+                type: 'bar',
+                data: {
+                    labels: ['Power BI', 'Microsoft Excel', 'SQL (Server/MySQL)', 'Bizagi Modeler', 'MS Project', 'VBA (Excel)', 'Python'],
+                    datasets: [{
+                        label: 'Nivel de Dominio (%)',
+                        data: [95, 95, 90, 90, 85, 80, 65],
+                        backgroundColor: gradientBlue,
+                        hoverBackgroundColor: '#f2c911',
+                        borderRadius: 8,
+                        borderWidth: 0,
+                        barPercentage: 0.7
+                    }]
+                },
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            backgroundColor: 'rgba(26, 26, 26, 0.95)',
+                            titleFont: { family: 'Montserrat', weight: 'bold' },
+                            bodyFont: { family: 'Montserrat' },
+                            callbacks: {
+                                label: function(context) {
+                                    return ` Dominio: ${context.raw}%`;
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            max: 100,
+                            ticks: {
+                                font: { family: 'Montserrat', size: 10, weight: 500 },
+                                color: mediumGray,
+                                callback: function(value) { return value + '%'; }
+                            },
+                            grid: {
+                                color: '#e8ecf1'
+                            }
+                        },
+                        y: {
+                            ticks: {
+                                font: { family: 'Montserrat', size: 11, weight: 600 },
+                                color: charcoal
+                            },
+                            grid: {
+                                display: false
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Chart 2: Metodologías y Habilidades BI (Radar Chart)
+            const ctx2 = document.getElementById('methodologyChart').getContext('2d');
+
+            new Chart(ctx2, {
+                type: 'radar',
+                data: {
+                    labels: ['Business Intelligence', 'Gestión por Procesos', 'Datamarts & ETL', 'Monitoreo PIA/PIM', 'Activos Fijos (NIC)', 'Gestión de Proyectos'],
+                    datasets: [{
+                        label: 'Nivel Competitivo',
+                        data: [95, 90, 90, 90, 85, 85],
+                        backgroundColor: 'rgba(20, 72, 160, 0.15)',
+                        borderColor: primaryNavy,
+                        borderWidth: 2,
+                        pointBackgroundColor: accentGold,
+                        pointBorderColor: primaryNavy,
+                        pointBorderWidth: 1.5,
+                        pointRadius: 4,
+                        pointHoverRadius: 6
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            backgroundColor: 'rgba(26, 26, 26, 0.95)',
+                            titleFont: { family: 'Montserrat', weight: 'bold' },
+                            bodyFont: { family: 'Montserrat' }
+                        }
+                    },
+                    scales: {
+                        r: {
+                            angleLines: {
+                                color: '#e8ecf1'
+                            },
+                            grid: {
+                                color: '#e8ecf1'
+                            },
+                            pointLabels: {
+                                font: { family: 'Montserrat', size: 10, weight: 600 },
+                                color: charcoal
+                            },
+                            ticks: {
+                                display: false,
+                                max: 100
+                            },
+                            suggestedMin: 50,
+                            suggestedMax: 100
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

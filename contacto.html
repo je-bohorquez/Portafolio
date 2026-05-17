@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto | JUAN E. BOHORQUEZ AGUILAR</title>
+    <link rel="icon" type="image/x-icon" href="icon/barchart.ico" />
+    <link rel="stylesheet" href="style.css">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-group">
+                    <img src="img/logo.png" alt="JE BOHORQUEZ AGUILAR" class="brand-logo">
+                    <div class="brand">
+                        <span class="brand-name">JUAN E. BOHORQUEZ AGUILAR</span>
+                        <span class="brand-tagline">Business Intelligence Analyst</span>
+                    </div>
+                </div>
+
+                <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+                    <span class="hamburger"></span>
+                </button>
+
+                <nav class="navigation" id="navigation">
+                    <ul class="nav-menu" id="navMenu">
+                        <li><a href="index.html" class="nav-link">INICIO</a></li>
+                        <li><a href="index.html#sobremi" class="nav-link">SOBRE MÍ</a></li>
+                        <li><a href="experiencia.html" class="nav-link">EXPERIENCIA</a></li>
+                        <li><a href="educacion.html" class="nav-link">EDUCACIÓN</a></li>
+                        <li><a href="competencias.html" class="nav-link">SKILLS</a></li>
+                        <li><a href="portfolio.html" class="nav-link">PORTAFOLIO</a></li>
+                        <li><a href="contacto.html" class="nav-link active">CONTACTO</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Space for fixed header -->
+    <div style="height: 80px;"></div>
+
+    <!-- Contact Section -->
+    <section id="contacto" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">CONTACTO</h2>
+                <p class="section-subtitle">¿Tienes un proyecto, consultoría o vacante en mente? Hablemos</p>
+            </div>
+
+            <div class="contact-grid">
+                <!-- Información de contacto -->
+                <div class="contact-info">
+                    <div class="contact-header">
+                        <h3>¡Conversemos!</h3>
+                        <p>No dudes en ponerte en contacto conmigo si tienes preguntas, propuestas de proyectos o necesitas asesoramiento en soluciones analíticas y Business Intelligence.</p>
+                    </div>
+
+                    <div class="contact-details">
+                        <!-- Email -->
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>EMAIL</h4>
+                                <p><a href="mailto:jebohorquez@hotmail.com" style="color: inherit; text-decoration: none;">jebohorquez@hotmail.com</a></p>
+                            </div>
+                        </div>
+
+                        <!-- Teléfono -->
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>TELÉFONO / WHATSAPP</h4>
+                                <p><a href="https://wa.me/51987178382" target="_blank" style="color: inherit; text-decoration: none;">+51 987 178 382</a></p>
+                            </div>
+                        </div>
+
+                        <!-- Ubicación -->
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>UBICACIÓN</h4>
+                                <p>Lima, Perú (Disponible para trabajo híbrido / remoto)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/je-bohorquez" target="_blank" class="social-link">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/je-bohorquez" target="_blank" class="social-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Formulario de contacto -->
+                <div class="contact-form-container">
+                    <form id="contactForm" class="contact-form"
+                        action="https://formsubmit.co/1abd71c5785c5eea7e954b9a16271fee" method="POST">
+                        <input type="hidden" name="_next"
+                            value="https://je-bohorquez.github.io/Portfolio/contacto.html?email_sent=true">
+                        <input type="hidden" name="_captcha" value="false">
+                        
+                        <div class="form-group">
+                            <label for="name">NOMBRE COMPLETO</label>
+                            <input type="text" id="name" name="nombre" class="form-control" placeholder="Ingresa tu nombre..." required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">EMAIL DE CONTACTO</label>
+                            <input type="email" id="email" name="email" class="form-control" placeholder="ejemplo@correo.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">ASUNTO</label>
+                            <input type="text" id="subject" name="asunto" class="form-control" placeholder="Asunto del mensaje..." required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">MENSAJE</label>
+                            <textarea id="message" name="mensaje" class="form-control" rows="6" placeholder="Escribe tu mensaje con detalles..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-full">
+                            <i class="fas fa-paper-plane"></i>
+                            ENVIAR MENSAJE
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo-group">
+                        <img src="img/logo.png" alt="JE DATA SOLUTIONS" class="brand-logo">
+                        <div class="brand">
+                            <span class="brand-name">JE DATA SOLUTIONS</span>
+                            <span class="brand-tagline">Business Intelligence</span>
+                        </div>
+                    </div>
+                    <p class="footer-description">
+                        "Transformando datos en decisiones estratégicas"
+                    </p>
+                </div>
+
+                <div class="footer-links" style="display: flex; justify-content: flex-end; align-items: center;">
+                    <div class="footer-column">
+                        <div class="social-links">
+                            <a href="https://www.linkedin.com/in/je-bohorquez" target="_blank" class="social-link">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://github.com/je-bohorquez" target="_blank" class="social-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>&copy; 2025 JE DATA SOLUTIONS. Todos los derechos reservados.</p>
+                </div>
+                <div class="footer-credits">
+                    <p>Ingeniero Empresarial CIP 379204</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
