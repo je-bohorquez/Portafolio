@@ -446,61 +446,51 @@ class PortfolioApp {
 
         if (downloadBtn) {
             downloadBtn.addEventListener('click', async function (e) {
+                // Si estamos en un entorno local de archivo (file://), dejamos que el navegador actúe de forma nativa
+                if (window.location.protocol === 'file:') {
+                    return;
+                }
+
+                // Si estamos en un servidor (http/https), forzamos la descarga del blob para evitar que se abra en el navegador
                 e.preventDefault();
 
-                // Mostrar indicador de carga
+                // Mostrar indicador de carga en el botón
                 const originalText = this.innerHTML;
                 this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> DESCARGANDO...';
-                this.disabled = true;
+                this.style.pointerEvents = 'none';
 
                 try {
-                    const pdfUrl = 'pdf/cv-juaneder-26.pdf';
-                    const fileName = 'CV_Juan_Eder.pdf';
+                    const pdfUrl = this.getAttribute('href') || 'pdf/cv-juaneder-26.pdf';
+                    const fileName = 'CV JE BOHORQUEZ.pdf';
 
-                    // Usar Fetch API para obtener el archivo como blob
                     const response = await fetch(pdfUrl);
-
-                    if (!response.ok) {
-                        throw new Error('Archivo no encontrado');
-                    }
+                    if (!response.ok) throw new Error('Error al descargar');
 
                     const blob = await response.blob();
                     const blobUrl = window.URL.createObjectURL(blob);
 
-                    // Crear enlace de descarga
                     const downloadLink = document.createElement('a');
                     downloadLink.href = blobUrl;
                     downloadLink.download = fileName;
                     downloadLink.style.display = 'none';
 
-                    // Trigger de descarga
                     document.body.appendChild(downloadLink);
                     downloadLink.click();
 
-                    // Limpiar
                     setTimeout(() => {
                         document.body.removeChild(downloadLink);
                         window.URL.revokeObjectURL(blobUrl);
                     }, 100);
 
-                    console.log('Descarga forzada iniciada');
-
                 } catch (error) {
-                    console.error('Error en descarga:', error);
-                    // Fallback: descarga tradicional
-                    const fallbackLink = document.createElement('a');
-                    fallbackLink.href = 'pdf/cv-juaneder-26.pdf';
-                    fallbackLink.download = 'CV_Juan_Eder.pdf';
-                    fallbackLink.style.display = 'none';
-                    document.body.appendChild(fallbackLink);
-                    fallbackLink.click();
-                    document.body.removeChild(fallbackLink);
+                    console.error('Error en descarga asíncrona, usando método tradicional:', error);
+                    // Fallback directo: abrir en pestaña nueva
+                    window.open(this.getAttribute('href'), '_blank');
                 } finally {
-                    // Restaurar botón
                     setTimeout(() => {
                         this.innerHTML = originalText;
-                        this.disabled = false;
-                    }, 2000);
+                        this.style.pointerEvents = 'auto';
+                    }, 1500);
                 }
             });
         }
