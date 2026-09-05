@@ -40,6 +40,7 @@ class PortfolioApp {
 
     setupNumberAnimation() {
         const stats = document.querySelectorAll('.stat-number');
+        if (stats.length === 0) return;
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -82,6 +83,7 @@ class PortfolioApp {
 
     setupStaggeredReveal() {
         const cards = document.querySelectorAll('.competence-card');
+        if (cards.length === 0) return;
 
         // Add class initially to hide them
         cards.forEach(card => card.classList.add('fade-up-element'));
@@ -226,47 +228,45 @@ class PortfolioApp {
         const filterButtons = document.querySelectorAll('.filter-btn');
         const portfolioItems = document.querySelectorAll('.portfolio-item');
 
-        if (filterButtons.length > 0 && portfolioItems.length > 0) {
-            filterButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    // Remove active class from all buttons
-                    filterButtons.forEach(btn => btn.classList.remove('active'));
+        if (filterButtons.length === 0 || portfolioItems.length === 0) return;
 
-                    // Add active class to clicked button
-                    button.classList.add('active');
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
 
-                    const filterValue = button.getAttribute('data-filter');
+                const filterValue = button.getAttribute('data-filter');
 
-                    // Filter portfolio items
-                    portfolioItems.forEach(item => {
-                        const itemCategory = item.getAttribute('data-category');
+                portfolioItems.forEach(item => {
+                    const itemCategory = item.getAttribute('data-category') || '';
+                    const matches = filterValue === 'all' || itemCategory.includes(filterValue);
 
-                        if (filterValue === 'all' || itemCategory.includes(filterValue)) {
-                            item.style.display = 'block';
-                            setTimeout(() => {
-                                item.style.opacity = '1';
-                                item.style.transform = 'translateY(0)';
-                            }, 100);
-                        } else {
-                            item.style.opacity = '0';
-                            item.style.transform = 'translateY(20px)';
-                            setTimeout(() => {
-                                item.style.display = 'none';
-                            }, 300);
-                        }
-                    });
+                    if (matches) {
+                        item.classList.remove('is-hidden');
+                        item.style.display = 'flex';
+                        requestAnimationFrame(() => {
+                            item.style.opacity = '1';
+                            item.style.transform = 'translateY(0)';
+                        });
+                    } else {
+                        item.style.opacity = '0';
+                        item.style.transform = 'translateY(15px)';
+                        item.classList.add('is-hidden');
+                        item.style.display = 'none';
+                    }
                 });
             });
-        }
+        });
     }
 
     // Scroll Effects
     setupScrollEffects() {
         const header = document.querySelector('.header');
+        if (!header) return;
 
         window.addEventListener('scroll', () => {
             // Header background on scroll
-            if (window.scrollY > 100) {
+            if (window.scrollY > 50) {
                 header.classList.add('scrolled');
             } else {
                 header.classList.remove('scrolled');
@@ -274,16 +274,23 @@ class PortfolioApp {
 
             // Active navigation link
             this.updateActiveNavLink();
-        });
+        }, { passive: true });
     }
 
     // Update Active Navigation Link
     updateActiveNavLink() {
-        const sections = document.querySelectorAll('section');
         const navLinks = document.querySelectorAll('.nav-link');
+        const hasInternalAnchor = Array.from(navLinks).some(link => {
+            const href = link.getAttribute('href');
+            return href && href.startsWith('#') && href.length > 1;
+        });
 
+        // En páginas multipágina (como portfolio.html, sobremi.html, etc.), preservar el active del archivo actual
+        if (!hasInternalAnchor) return;
+
+        const sections = document.querySelectorAll('section[id]');
         let currentSection = '';
-        const scrollPosition = window.scrollY + 100;
+        const scrollPosition = window.scrollY + 120;
 
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
@@ -294,12 +301,16 @@ class PortfolioApp {
             }
         });
 
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === `#${currentSection}`) {
-                link.classList.add('active');
-            }
-        });
+        if (currentSection) {
+            navLinks.forEach(link => {
+                if (link.getAttribute('href').startsWith('#')) {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${currentSection}`) {
+                        link.classList.add('active');
+                    }
+                }
+            });
+        }
     }
 
     // Contact Form Handler

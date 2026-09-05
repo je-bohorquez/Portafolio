@@ -7,11 +7,10 @@
     <title>Competencias y Skills | JUAN E. BOHORQUEZ AGUILAR</title>
     <link rel="icon" type="image/x-icon" href="icon/barchart.ico" />
     <link rel="stylesheet" href="style.css">
-    <!-- Fonts -->
+    <!-- Apple SF Pro / Inter System Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <!-- Chart.js CDN -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -219,17 +218,19 @@
             box-shadow: 0 4px 12px rgba(30, 64, 175, 0.25);
         }
 
-        /* Charts section premium */
+        /* Charts section Apple Dashboard Style */
         .charts-section {
-            padding: 4rem 0 5rem 0;
-            background: #fdfdfd;
+            padding: 4.5rem 0 5.5rem 0;
+            background: #f8fafc;
+            border-top: 1px solid rgba(226, 232, 240, 0.8);
+            border-bottom: 1px solid rgba(226, 232, 240, 0.8);
         }
 
         .charts-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 2.5rem;
-            max-width: 1100px;
+            grid-template-columns: repeat(auto-fit, minmax(440px, 1fr));
+            gap: 2.2rem;
+            max-width: 1160px;
             margin: 0 auto;
         }
 
@@ -246,52 +247,64 @@
 
             .skills-hero .section-title {
                 font-size: 1.6rem;
-                letter-spacing: 2px;
+                letter-spacing: -0.02em;
             }
         }
 
         .chart-card {
-            background: var(--white);
-            border-radius: 16px;
-            padding: 2rem;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-            border: 1px solid #e8ecf1;
-            transition: var(--transition);
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 2.2rem 2.2rem 2.2rem 2.2rem;
+            box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05), 0 1px 3px rgba(15, 23, 42, 0.03);
+            border: 1px solid rgba(226, 232, 240, 0.9);
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex;
+            flex-direction: column;
         }
 
         .chart-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 30px rgba(20, 72, 160, 0.08);
-            border-color: var(--primary-blue);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 35px -5px rgba(16, 58, 131, 0.12), 0 8px 16px -4px rgba(0, 0, 0, 0.03);
+            border-color: rgba(20, 72, 160, 0.2);
+        }
+
+        .chart-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 1.8rem;
+            gap: 0.5rem;
+        }
+
+        .chart-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: rgba(20, 72, 160, 0.08);
+            color: var(--primary-blue);
+            padding: 0.3rem 0.85rem;
+            border-radius: 9999px;
+            font-family: var(--font-apple);
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
         }
 
         .chart-card h3 {
-            font-size: 1.05rem;
-            font-weight: 700;
+            font-family: var(--font-apple-display);
+            font-size: 1.22rem;
+            font-weight: 600;
             color: var(--dark-charcoal);
-            margin-bottom: 1.5rem;
+            margin: 0;
             text-align: center;
-            position: relative;
-            padding-bottom: 0.5rem;
-            letter-spacing: 1px;
-        }
-
-        .chart-card h3::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 50px;
-            height: 3px;
-            background: linear-gradient(90deg, var(--primary-blue), var(--accent-gold));
-            border-radius: 2px;
+            letter-spacing: -0.02em;
         }
 
         .chart-wrapper {
             position: relative;
             width: 100%;
-            height: 320px;
+            height: 350px;
         }
 
         /* CTA Section */
@@ -527,7 +540,10 @@
             <div class="charts-container">
                 <!-- Tech Stack Chart -->
                 <div class="chart-card">
-                    <h3>DATA STACK & HERRAMIENTAS TÉCNICAS</h3>
+                    <div class="chart-header">
+                        <span class="chart-badge"><i class="fas fa-terminal"></i> Data Stack</span>
+                        <h3>HERRAMIENTAS TÉCNICAS</h3>
+                    </div>
                     <div class="chart-wrapper">
                         <canvas id="techStackChart"></canvas>
                     </div>
@@ -535,7 +551,10 @@
 
                 <!-- Methodology Chart -->
                 <div class="chart-card">
-                    <h3>METODOLOGÍAS & BI PROFICIENCY</h3>
+                    <div class="chart-header">
+                        <span class="chart-badge"><i class="fas fa-project-diagram"></i> Metodología</span>
+                        <h3>GESTIÓN ESTRATÉGICA & BI</h3>
+                    </div>
                     <div class="chart-wrapper">
                         <canvas id="methodologyChart"></canvas>
                     </div>
@@ -606,73 +625,104 @@
 
     <script src="script.js"></script>
     <script>
-        // Configuración de los Gráficos de Competencias con los colores corporativos
+        // Configuración de los Gráficos de Competencias con estética Apple Mac
         document.addEventListener('DOMContentLoaded', () => {
-            const primaryNavy = '#1e40af';
-            const accentGold = '#c5a85c';
+            const appleFont = "'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif";
+            const primaryNavy = '#103a83';
+            const primaryBlue = '#1448a0';
+            const accentGold = '#ffb81c';
             const charcoal = '#1e293b';
-            const mediumGray = '#475569';
+            const mediumGray = '#64748b';
+
+            // Plugin personalizado para mostrar porcentajes al final de cada barra estilo Apple
+            const barDataLabelsPlugin = {
+                id: 'barDataLabels',
+                afterDatasetsDraw(chart) {
+                    const { ctx, data } = chart;
+                    chart.getDatasetMeta(0).data.forEach((bar, index) => {
+                        const val = data.datasets[0].data[index] + '%';
+                        ctx.save();
+                        ctx.font = '600 11.5px Inter, -apple-system, BlinkMacSystemFont, sans-serif';
+                        ctx.fillStyle = '#1448a0';
+                        ctx.textAlign = 'left';
+                        ctx.textBaseline = 'middle';
+                        ctx.fillText(val, bar.x + 8, bar.y);
+                        ctx.restore();
+                    });
+                }
+            };
 
             // Chart 1: Data Stack (Horizontal Bar Chart)
             const ctx1 = document.getElementById('techStackChart').getContext('2d');
             
-            // Creamos un degradado hermoso
-            const gradientBlue = ctx1.createLinearGradient(0, 0, 400, 0);
-            gradientBlue.addColorStop(0, '#1e40af');
-            gradientBlue.addColorStop(1, '#3b82f6');
+            // Degradado Apple Blue suave
+            const gradientBlue = ctx1.createLinearGradient(0, 0, 450, 0);
+            gradientBlue.addColorStop(0, '#103a83');
+            gradientBlue.addColorStop(1, '#2563eb');
 
             new Chart(ctx1, {
                 type: 'bar',
                 data: {
                     labels: ['Power BI', 'Microsoft Excel', 'SQL (Server/MySQL)', 'Bizagi Modeler', 'MS Project', 'VBA (Excel)', 'Python'],
                     datasets: [{
-                        label: 'Nivel de Dominio (%)',
+                        label: 'Dominio',
                         data: [95, 95, 90, 90, 85, 80, 65],
                         backgroundColor: gradientBlue,
-                        hoverBackgroundColor: '#c5a85c',
-                        borderRadius: 8,
+                        hoverBackgroundColor: '#ffb81c',
+                        borderRadius: 10,
+                        borderSkipped: false,
                         borderWidth: 0,
-                        barPercentage: 0.7
+                        barPercentage: 0.58
                     }]
                 },
+                plugins: [barDataLabelsPlugin],
                 options: {
                     indexAxis: 'y',
                     responsive: true,
                     maintainAspectRatio: false,
+                    layout: {
+                        padding: {
+                            right: 25
+                        }
+                    },
                     plugins: {
                         legend: {
                             display: false
                         },
                         tooltip: {
-                            backgroundColor: 'rgba(26, 26, 26, 0.95)',
-                            titleFont: { family: 'Montserrat', weight: 'bold' },
-                            bodyFont: { family: 'Montserrat' },
+                            backgroundColor: 'rgba(15, 23, 42, 0.92)',
+                            titleFont: { family: appleFont, size: 12, weight: 600 },
+                            bodyFont: { family: appleFont, size: 11.5 },
+                            padding: 10,
+                            cornerRadius: 8,
                             callbacks: {
                                 label: function(context) {
-                                    return ` Dominio: ${context.raw}%`;
+                                    return ` Nivel de Dominio: ${context.raw}%`;
                                 }
                             }
                         }
                     },
                     scales: {
                         x: {
-                            max: 100,
+                            max: 105,
                             ticks: {
-                                font: { family: 'Montserrat', size: 10, weight: 500 },
+                                font: { family: appleFont, size: 10.5, weight: 500 },
                                 color: mediumGray,
                                 callback: function(value) { return value + '%'; }
                             },
                             grid: {
-                                color: '#e8ecf1'
+                                color: 'rgba(226, 232, 240, 0.7)',
+                                drawBorder: false
                             }
                         },
                         y: {
                             ticks: {
-                                font: { family: 'Montserrat', size: 11, weight: 600 },
+                                font: { family: appleFont, size: 12, weight: 600 },
                                 color: charcoal
                             },
                             grid: {
-                                display: false
+                                display: false,
+                                drawBorder: false
                             }
                         }
                     }
@@ -689,14 +739,14 @@
                     datasets: [{
                         label: 'Nivel Competitivo',
                         data: [95, 90, 90, 90, 85, 85],
-                        backgroundColor: 'rgba(30, 64, 175, 0.12)',
-                        borderColor: primaryNavy,
-                        borderWidth: 2,
-                        pointBackgroundColor: accentGold,
-                        pointBorderColor: primaryNavy,
-                        pointBorderWidth: 1.5,
-                        pointRadius: 4,
-                        pointHoverRadius: 6
+                        backgroundColor: 'rgba(20, 72, 160, 0.16)',
+                        borderColor: '#1448a0',
+                        borderWidth: 2.5,
+                        pointBackgroundColor: '#ffb81c',
+                        pointBorderColor: '#ffffff',
+                        pointBorderWidth: 2,
+                        pointRadius: 5,
+                        pointHoverRadius: 8
                     }]
                 },
                 options: {
@@ -707,21 +757,29 @@
                             display: false
                         },
                         tooltip: {
-                            backgroundColor: 'rgba(26, 26, 26, 0.95)',
-                            titleFont: { family: 'Montserrat', weight: 'bold' },
-                            bodyFont: { family: 'Montserrat' }
+                            backgroundColor: 'rgba(15, 23, 42, 0.92)',
+                            titleFont: { family: appleFont, size: 12, weight: 600 },
+                            bodyFont: { family: appleFont, size: 11.5 },
+                            padding: 10,
+                            cornerRadius: 8,
+                            callbacks: {
+                                label: function(context) {
+                                    return ` Score: ${context.raw}%`;
+                                }
+                            }
                         }
                     },
                     scales: {
                         r: {
                             angleLines: {
-                                color: '#e8ecf1'
+                                color: 'rgba(203, 213, 225, 0.65)'
                             },
                             grid: {
-                                color: '#e8ecf1'
+                                color: 'rgba(203, 213, 225, 0.65)',
+                                circular: true
                             },
                             pointLabels: {
-                                font: { family: 'Montserrat', size: 10, weight: 600 },
+                                font: { family: appleFont, size: 11.5, weight: 600 },
                                 color: charcoal
                             },
                             ticks: {

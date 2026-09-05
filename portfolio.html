@@ -7,11 +7,10 @@
     <title>Portafolio de Proyectos | JUAN E. BOHORQUEZ AGUILAR</title>
     <link rel="icon" type="image/x-icon" href="icon/barchart.ico" />
     <link rel="stylesheet" href="style.css">
-    <!-- Fonts -->
+    <!-- Apple SF Pro / Inter System Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 </head>
 
@@ -47,9 +46,6 @@
         </div>
     </header>
 
-    <!-- Space for fixed header -->
-    <div style="height: 80px;"></div>
-
     <!-- Portfolio Section -->
     <section id="portfolio" class="portfolio">
         <div class="container">
@@ -73,7 +69,7 @@
                         <div class="portfolio-overlay">
                             <div class="portfolio-actions">
                                 <a href="https://app.powerbi.com/view?r=eyJrIjoiZGQ2NzYyODEtMmE4ZC00NThjLTg2MTQtOGEzNzI0ZTlkZDA2IiwidCI6ImM0YTY2YzM0LTJiYjctNDUxZi04YmUxLWIyYzI2YTQzMDE1OCIsImMiOjR9&embedImagePlaceholder=true"
-                                    target="_blank" class="action-btn external-link">
+                                    target="_blank" rel="noopener noreferrer" class="action-btn external-link" aria-label="Abrir reporte en Power BI">
                                     <i class="fas fa-external-link-alt"></i>
                                 </a>
                             </div>
@@ -92,7 +88,7 @@
                             <span class="portfolio-tag">Análisis de Procesos</span>
                         </div>
                         <a href="https://app.powerbi.com/view?r=eyJrIjoiZGQ2NzYyODEtMmE4ZC00NThjLTg2MTQtOGEzNzI0ZTlkZDA2IiwidCI6ImM0YTY2YzM0LTJiYjctNDUxZi04YmUxLWIyYzI2YTQzMDE1OCIsImMiOjR9&embedImagePlaceholder=true"
-                            target="_blank" class="portfolio-link">
+                            target="_blank" rel="noopener noreferrer" class="portfolio-link">
                             Ver Reporte Power BI
                             <i class="fas fa-arrow-right"></i>
                         </a>
@@ -105,8 +101,8 @@
                         <img src="img/portafolio/port02.jpg" alt="Flujo de Caja">
                         <div class="portfolio-overlay">
                             <div class="portfolio-actions">
-                                <a href="https://app.powerbi.com/view?r=eyJrIjoiNTIyZWY0ZDgtN2VlZC00Y2I0LWFiZjktMDExNDQ3NzkyMTQ4IiwidCI6ImM0YTY2YzM0LTJiYjctNDUxZi04YmUxLWIyYzI2YTQzMDE1OCIsImMiOjR9&embedImagePlaceholder=true"
-                                    target="_blank" class="action-btn external-link">
+                                <a href="https://app.powerbi.com/view?r=eyJrIjoiNzA0ZjAzZjMtMmQ5MS00Nzk4LTgyNzgtYWEyODBkNzIwNjMwIiwidCI6ImM0YTY2YzM0LTJiYjctNDUxZi04YmUxLWIyYzI2YTQzMDE1OCIsImMiOjR9"
+                                    target="_blank" rel="noopener noreferrer" class="action-btn external-link" aria-label="Abrir reporte en Power BI">
                                     <i class="fas fa-external-link-alt"></i>
                                 </a>
                             </div>
@@ -124,8 +120,8 @@
                             <span class="portfolio-tag">Power BI</span>
                             <span class="portfolio-tag">KPIs Financieros</span>
                         </div>
-                        <a href="https://app.powerbi.com/view?r=eyJrIjoiNTIyZWY0ZDgtN2VlZC00Y2I0LWFiZjktMDExNDQ3NzkyMTQ4IiwidCI6ImM0YTY2YzM0LTJiYjctNDUxZi04YmUxLWIyYzI2YTQzMDE1OCIsImMiOjR9&embedImagePlaceholder=true"
-                            target="_blank" class="portfolio-link">
+                        <a href="https://app.powerbi.com/view?r=eyJrIjoiNzA0ZjAzZjMtMmQ5MS00Nzk4LTgyNzgtYWEyODBkNzIwNjMwIiwidCI6ImM0YTY2YzM0LTJiYjctNDUxZi04YmUxLWIyYzI2YTQzMDE1OCIsImMiOjR9"
+                            target="_blank" rel="noopener noreferrer" class="portfolio-link">
                             Ver Reporte Power BI
                             <i class="fas fa-arrow-right"></i>
                         </a>
@@ -138,8 +134,8 @@
                         <img src="img/portafolio/port03.jpg" alt="Control de Activos Fijos">
                         <div class="portfolio-overlay">
                             <div class="portfolio-actions">
-                                <a href="https://epspatrimonio.github.io/ACTIVOS-FIJOS/"
-                                    target="_blank" class="action-btn external-link">
+                                <a href="https://epspatrimonio.github.io/ACTIVOS-FIJOS/" target="_blank"
+                                    rel="noopener noreferrer" class="action-btn external-link" aria-label="Abrir aplicación web">
                                     <i class="fas fa-external-link-alt"></i>
                                 </a>
                             </div>
@@ -147,15 +143,17 @@
                     </div>
                     <div class="portfolio-content">
                         <h3>Control de Activos Fijos</h3>
-                        <p>Aplicativo web desarrollado desde cero con HTML, CSS y JavaScript para la gestión integral del ciclo de vida de activos fijos: registro de altas, bajas, depreciación y revaluación bajo NIC 16. Desplegado en GitHub Pages como solución accesible y sin dependencias de licencias propietarias.</p>
+                        <p>Aplicativo web desarrollado desde cero con HTML, CSS y JavaScript para la gestión integral
+                            del ciclo de vida de activos fijos: registro de altas, bajas, depreciación y revaluación
+                            bajo NIC 16. Desplegado en GitHub Pages como solución accesible y sin dependencias de
+                            licencias propietarias.</p>
                         <div class="portfolio-tags">
                             <span class="portfolio-tag">HTML5</span>
                             <span class="portfolio-tag">CSS3</span>
                             <span class="portfolio-tag">JavaScript</span>
                             <span class="portfolio-tag">Gestión de Activos</span>
                         </div>
-                        <a href="https://epspatrimonio.github.io/ACTIVOS-FIJOS/"
-                            target="_blank" class="portfolio-link">
+                        <a href="https://epspatrimonio.github.io/ACTIVOS-FIJOS/" target="_blank" rel="noopener noreferrer" class="portfolio-link">
                             Ver Aplicación Web
                             <i class="fas fa-arrow-right"></i>
                         </a>
@@ -182,13 +180,13 @@
                     </p>
                 </div>
 
-                <div class="footer-links" style="display: flex; justify-content: flex-end; align-items: center;">
+                <div class="footer-links">
                     <div class="footer-column">
                         <div class="social-links">
-                            <a href="#" class="social-link">
+                            <a href="#" class="social-link" aria-label="LinkedIn">
                                 <i class="fab fa-linkedin-in"></i>
                             </a>
-                            <a href="#" class="social-link">
+                            <a href="#" class="social-link" aria-label="GitHub">
                                 <i class="fab fa-github"></i>
                             </a>
                         </div>
